@@ -11,6 +11,7 @@ import TSCBasic
 import TSCUtility
 import XCParseCore
 import Converter
+import FoundationNetworking
 
 let xcparseCurrentVersion = Version(2, 2, 1)
 

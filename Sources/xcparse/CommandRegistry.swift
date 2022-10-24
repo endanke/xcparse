@@ -69,8 +69,8 @@ struct CommandRegistry {
                                                   divideByTargetOS: false,
                                                   divideByTestPlanConfig: false,
                                                   xcresulttoolCompatability: xcresulttoolCompatability,
-                                                  attachmentFilter: {
-                                                    return UTTypeConformsTo($0.uniformTypeIdentifier as CFString, "public.image" as CFString)
+                                                  attachmentFilter: { _ in
+                                                    return true //UTTypeConformsTo($0.uniformTypeIdentifier as CFString, "public.image" as CFString)
             })
             try xcpParser.extractAttachments(xcresultPath: legacyScreenshotPaths[0].path.pathString,
                                              destination: destination,

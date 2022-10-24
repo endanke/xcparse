@@ -88,8 +88,8 @@ struct ScreenshotsCommand: Command {
                                               divideByLanguage: arguments.get(self.divideByLanguage) ?? false,
                                               divideByRegion: arguments.get(self.divideByRegion) ?? false,
                                               divideByTest: arguments.get(self.divideByTest) ?? false,
-                                              attachmentFilter: {
-                                                return UTTypeConformsTo($0.uniformTypeIdentifier as CFString, "public.image" as CFString)
+                                              attachmentFilter: { _ in
+                                                return true //UTTypeConformsTo($0.uniformTypeIdentifier as CFString, "public.image" as CFString)
         })
         if let allowedTestStatuses = arguments.get(self.testStatusWhitelist) {
             options.testSummaryFilter = { allowedTestStatuses.contains($0.testStatus) }
